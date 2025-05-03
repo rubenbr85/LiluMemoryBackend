@@ -3,6 +3,10 @@ import { SOURCES } from '../constants/sources';
 
 export class SourcesService {
   public static getSources(): CharacterSource[] {
-    return SOURCES;
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || '';
+    return SOURCES.map(source => ({
+      ...source,
+      imageMenu: `${baseUrl}${source.imageMenu}`
+    }));
   }
 } 
