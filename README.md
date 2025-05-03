@@ -1,11 +1,12 @@
 # Lilu Memory Backend
 
-Este es un backend desarrollado con Next.js que proporciona una API REST con autenticación mediante API Key.
+Este es un backend desarrollado con Next.js que proporciona una API REST con autenticación mediante API Key. El proyecto está diseñado para gestionar recuerdos y memorias de manera segura y eficiente.
 
 ## Requisitos Previos
 
 - Node.js (versión recomendada: 18.x o superior)
 - npm o yarn
+- MongoDB (versión 4.4 o superior)
 
 ## Configuración del Entorno
 
@@ -25,16 +26,41 @@ yarn install
 3. Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
 ```env
 API_KEY=tu_api_key_secreta
+MONGODB_URI=tu_uri_de_mongodb
 ```
 
 ## Estructura del Proyecto
 
 ```
 src/
+  ├── app/
+  │   ├── api/         # Endpoints de la API
+  │   │   ├── memories/    # Endpoints relacionados con memorias
+  │   │   └── users/       # Endpoints relacionados con usuarios
+  │   └── ...
+  ├── lib/
+  │   ├── db/         # Configuración y utilidades de base de datos
+  │   └── utils/      # Utilidades generales
   ├── middleware/
-  │   └── auth.ts      # Middleware de autenticación
-  └── ...
+  │   └── auth.ts     # Middleware de autenticación
+  └── types/          # Definiciones de tipos TypeScript
 ```
+
+## Endpoints Disponibles
+
+### Memorias
+- `GET /api/memories` - Obtener todas las memorias
+- `GET /api/memories/:id` - Obtener una memoria específica
+- `POST /api/memories` - Crear una nueva memoria
+- `PUT /api/memories/:id` - Actualizar una memoria existente
+- `DELETE /api/memories/:id` - Eliminar una memoria
+
+### Usuarios
+- `GET /api/users` - Obtener todos los usuarios
+- `GET /api/users/:id` - Obtener un usuario específico
+- `POST /api/users` - Crear un nuevo usuario
+- `PUT /api/users/:id` - Actualizar un usuario existente
+- `DELETE /api/users/:id` - Eliminar un usuario
 
 ## Autenticación
 
@@ -55,6 +81,8 @@ npm run dev
 yarn dev
 ```
 
+El servidor se iniciará en `http://localhost:3000`
+
 ## Producción
 
 Para construir la aplicación para producción:
@@ -73,9 +101,17 @@ npm start
 yarn start
 ```
 
+## Contribución
+
+1. Haz un Fork del proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Haz commit de tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
 ## Licencia
 
-[Especificar la licencia del proyecto]
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.md) para más detalles.
 
 ## Contacto
 
