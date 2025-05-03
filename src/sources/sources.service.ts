@@ -7,6 +7,6 @@ export class SourcesService {
     return SOURCES.map(source => ({
       ...source,
       imageMenu: `${baseUrl}${source.imageMenu}`
-    }));
+    })).sort((a, b) => a.orden - b.orden);
   }
 } 
