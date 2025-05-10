@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { CharacterService } from '../../services/characters/CharacterService';
-import { SourcesService } from '../../sources/sources.service';
+import { SourcesService } from '../../services/sources/sources.service';
 
 export class CharactersController {
   public static async getCharacters(req: NextApiRequest, res: NextApiResponse) {

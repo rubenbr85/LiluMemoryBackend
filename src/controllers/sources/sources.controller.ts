@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { SourcesService } from '../../sources/sources.service';
+import { SourcesService } from '../../services/sources/sources.service';
 
 export class SourcesController {
   public static async getSources(req: NextApiRequest, res: NextApiResponse) {
