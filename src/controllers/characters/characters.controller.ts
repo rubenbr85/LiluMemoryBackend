@@ -11,8 +11,7 @@ export class CharactersController {
         return res.status(400).json({ error: 'Se requiere especificar el ID de la fuente' });
       }
 
-      const sources = SourcesService.getSources();
-      const source = sources.find(s => s.id === Number(sourceId));
+      const source = SourcesService.getSourceById(Number(sourceId));
 
       if (!source) {
         return res.status(404).json({ error: 'Fuente no encontrada' });
