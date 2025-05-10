@@ -9,4 +9,8 @@ export class SourcesService {
       imageMenu: `${baseUrl}${source.imageMenu}`
     })).sort((a, b) => a.orden - b.orden);
   }
+
+  public static getSourceById(id: Number): CharacterSource | undefined {
+    return this.getSources().find(source => source.id === id);
+  }
 } 
