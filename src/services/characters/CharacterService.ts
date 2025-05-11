@@ -3,6 +3,7 @@ import { CharacterSource } from '../../models/character-source.interface';
 import { SOURCE_POKEMON_ID, SOURCE_DISNEY_ID } from '../../constants/sources';
 import { PokemonService } from './PokemonService';
 import { DisneyService } from './DisneyService';
+import { DifficultyService } from '../difficulty/difficulty.service';
 
 export class CharacterService {
   static async fetchCharacters(source: CharacterSource, limit: number): Promise<Character[]> {
@@ -23,6 +24,20 @@ export class CharacterService {
       return this.getRandomCharacters(characters, limit);
     } catch (error) {
       console.error(`Error al obtener personajes de ${source.nombre}:`, error);
+      return [];
+    }
+  }
+
+  static async fetchCharactersByDifficultyId(source: CharacterSource, difficultyId: number): Promise<Character[]> {
+    try {
+      const difficulty = DifficultyService.getDifficultyById(difficultyId);
+      if (!difficulty) {
+        throw new Error(`Dificultad no encontrada para ID: ${difficultyId}`);
+      }
+
+      return await this.fetchCharacters(source, difficulty.numberCharacter);
+    } catch (error) {
+      console.error(`Error al obtener personajes por ID de dificultad ${difficultyId}:`, error);
       return [];
     }
   }

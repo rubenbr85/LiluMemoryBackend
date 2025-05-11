@@ -5,7 +5,7 @@ import { SourcesService } from '../../services/sources/sources.service';
 export class CharactersController {
   public static async getCharacters(req: NextApiRequest, res: NextApiResponse) {
     try {
-      const { sourceId, limit = 10 } = req.query;
+      const { sourceId, limit, difficultyId } = req.query;
       
       if (!sourceId || typeof sourceId !== 'string') {
         return res.status(400).json({ error: 'Se requiere especificar el ID de la fuente' });
@@ -17,7 +17,12 @@ export class CharactersController {
         return res.status(404).json({ error: 'Fuente no encontrada' });
       }
 
-      const characters = await CharacterService.fetchCharacters(source, Number(limit));
+      let characters;
+      if (difficultyId) {
+        characters = await CharacterService.fetchCharactersByDifficultyId(source, Number(difficultyId));
+      } else {
+        characters = await CharacterService.fetchCharacters(source, Number(limit));
+      }
       
       return res.status(200).json(characters);
     } catch (error) {

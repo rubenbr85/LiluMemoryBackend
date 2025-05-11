@@ -1,7 +1,7 @@
 import { DIFFICULTYS } from '../../constants/difficultys';
 import { Difficulty } from '@/models/difficulty.interface';
 
-export class SourcesService {
+export class DifficultyService {
   public static getDifficultys(): Difficulty[] {
     return DIFFICULTYS.map(difficulty => ({
       ...difficulty,
