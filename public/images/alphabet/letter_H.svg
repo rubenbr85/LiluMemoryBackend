@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .letter { font-family: "Comic Sans MS", cursive; }
+            .shadow { filter: drop-shadow(4px 4px 3px rgba(0,0,0,0.3)); }
+        </style>
+    </defs>
+    <rect width="512" height="512" rx="32" fill="#98DDCA" class="shadow"/>
+    <text x="256" y="360" font-family="Comic Sans MS" font-size="400" fill="white" text-anchor="middle" class="letter shadow">H</text>
+    <circle cx="180" cy="180" r="25" fill="white" class="shadow"/>
+    <circle cx="332" cy="180" r="25" fill="white" class="shadow"/>
+    <path d="M180 300 Q 256 360 332 300" fill="none" stroke="white" stroke-width="16" stroke-linecap="round" class="shadow"/>
+</svg>

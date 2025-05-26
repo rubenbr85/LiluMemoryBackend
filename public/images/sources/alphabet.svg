@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .shadow { filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.3)); }
+        </style>
+    </defs>
+    <rect width="24" height="24" rx="4" fill="#4A90E2" class="shadow"/>
+    <text x="12" y="17" font-family="Comic Sans MS" font-size="14" fill="white" text-anchor="middle" class="shadow">A</text>
+    <circle cx="8" cy="8" r="1.5" fill="white" class="shadow"/>
+    <circle cx="16" cy="8" r="1.5" fill="white" class="shadow"/>
+    <path d="M8 12 Q 12 14 16 12" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" class="shadow"/>
+</svg>
