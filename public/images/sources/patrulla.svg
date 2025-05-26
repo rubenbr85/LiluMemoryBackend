@@ -1,0 +1,12 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cara -->
+  <circle cx="12" cy="12" r="8" fill="#e0e0e0" stroke="#888" stroke-width="2"/>
+  <!-- Orejas -->
+  <path d="M6 7C6 7 4 4 6 2C8 4 6 7 6 7Z" fill="#e0e0e0" stroke="#888" stroke-width="2"/>
+  <path d="M18 7C18 7 20 4 18 2C16 4 18 7 18 7Z" fill="#e0e0e0" stroke="#888" stroke-width="2"/>
+  <!-- Ojos -->
+  <circle cx="9" cy="10" r="1.5" fill="#888"/>
+  <circle cx="15" cy="10" r="1.5" fill="#888"/>
+  <!-- Nariz -->
+  <circle cx="12" cy="13" r="2" fill="#888"/>
+</svg>

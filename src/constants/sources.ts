@@ -2,6 +2,7 @@ import { CharacterSource } from '../models/character-source.interface';
 
 export const SOURCE_POKEMON_ID = 1;
 export const SOURCE_DISNEY_ID = 2;
+export const SOURCE_PATRULLA_ID = 3;
 
 export const SOURCES: CharacterSource[] = [
   {
@@ -15,5 +16,11 @@ export const SOURCES: CharacterSource[] = [
     orden: 2,
     nombre: 'Disney',
     imageMenu: '/images/sources/disney.svg'
+  },
+  {
+    id: SOURCE_PATRULLA_ID,
+    orden: 3,
+    nombre: 'Patrulla',
+    imageMenu: '/images/sources/patrulla.svg'
   }
-]; 
+];

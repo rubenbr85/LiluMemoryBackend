@@ -1,8 +1,9 @@
 import { Character } from '../../models/character.interface';
 import { CharacterSource } from '../../models/character-source.interface';
-import { SOURCE_POKEMON_ID, SOURCE_DISNEY_ID } from '../../constants/sources';
+import { SOURCE_POKEMON_ID, SOURCE_DISNEY_ID, SOURCE_PATRULLA_ID } from '../../constants/sources';
 import { PokemonService } from './PokemonService';
 import { DisneyService } from './DisneyService';
+import { PatrullaService } from './PatrullaService';
 import { DifficultyService } from '../difficulty/difficulty.service';
 
 export class CharacterService {
@@ -16,6 +17,9 @@ export class CharacterService {
           break;
         case SOURCE_DISNEY_ID:
           characters = await DisneyService.fetchDisneyCharacters();
+          break;
+        case SOURCE_PATRULLA_ID:
+          characters = PatrullaService.getCharacters();
           break;
         default:
           throw new Error(`Fuente desconocida: ${source.nombre}`);
@@ -55,4 +59,4 @@ export class CharacterService {
     const shuffledCharacters = this.shuffleArray(characters);
     return shuffledCharacters.slice(0, limit);
   }
-} 
+}
