@@ -5,6 +5,7 @@ export const SOURCE_DISNEY_ID = 2;
 export const SOURCE_PATRULLA_ID = 3;
 export const SOURCE_ALPHABET_ID = 4;
 export const SOURCE_NUMBERS_ID = 5;
+export const SOURCE_RICK_AND_MORTY_ID = 6;
 
 export const SOURCES: CharacterSource[] = [
   {
@@ -36,5 +37,11 @@ export const SOURCES: CharacterSource[] = [
     nombre: 'Números',
     imageMenu: '/images/menu/numbers_menu.svg',
     orden: 5
+  },
+  {
+    id: SOURCE_RICK_AND_MORTY_ID,
+    nombre: 'Rick and Morty',
+    imageMenu: '/images/sources/rickandmorty.svg',
+    orden: 6
   }
 ];

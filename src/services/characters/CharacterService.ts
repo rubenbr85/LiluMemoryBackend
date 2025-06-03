@@ -1,11 +1,12 @@
 import { Character } from '../../models/character.interface';
 import { CharacterSource } from '../../models/character-source.interface';
-import { SOURCE_POKEMON_ID, SOURCE_DISNEY_ID, SOURCE_PATRULLA_ID, SOURCE_ALPHABET_ID, SOURCE_NUMBERS_ID } from '../../constants/sources';
+import { SOURCE_POKEMON_ID, SOURCE_DISNEY_ID, SOURCE_PATRULLA_ID, SOURCE_ALPHABET_ID, SOURCE_NUMBERS_ID, SOURCE_RICK_AND_MORTY_ID } from '../../constants/sources';
 import { PokemonService } from './PokemonService';
 import { DisneyService } from './DisneyService';
 import { PatrullaService } from './PatrullaService';
 import { AlphabetService } from './AlphabetService';
 import { NumbersService } from './NumbersService';
+import { RickAndMortyService } from './RickAndMortyService';
 import { DifficultyService } from '../difficulty/difficulty.service';
 
 export class CharacterService {
@@ -28,6 +29,9 @@ export class CharacterService {
           break;
         case SOURCE_NUMBERS_ID:
           characters = NumbersService.getCharacters();
+          break;
+        case SOURCE_RICK_AND_MORTY_ID:
+          characters = await RickAndMortyService.fetchRickAndMortyCharacters();
           break;
         default:
           throw new Error(`Fuente desconocida: ${source.nombre}`);
