@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .number { font-family: "Comic Sans MS", cursive; }
+            .shadow { filter: drop-shadow(4px 4px 3px rgba(0,0,0,0.3)); }
+        </style>
+    </defs>
+    <rect width="512" height="512" rx="32" fill="#2196F3" class="shadow"/>
+    <text x="256" y="360" font-family="Comic Sans MS" font-size="400" fill="white" text-anchor="middle" class="number shadow">21</text>
+</svg> 
